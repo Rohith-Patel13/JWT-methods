@@ -1,0 +1,39 @@
+###
+
+GET http://localhost:3000/books/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsMTIzIiwiaWF0IjoxNjkxMjI4Mzc5fQ.6PrS--qZE6U4GHNX8d0ugj5_bLu1e9XZR19FnppgaZI
+
+### without authorization ==>  Response Body= authorization not used and token not send to server from client
+GET http://localhost:3000/books/
+
+### token not given ==>  Response Body= give token bro
+GET http://localhost:3000/books/
+Authorization: Bearer
+
+###  authorization and token is randomly given => Response Body= invalid Token
+GET http://localhost:3000/books/
+Authorization: Bearer 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
+
+###
+
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{   
+    "name":"rahul",
+    "username":"rahul123",
+    "password": "rahul@456",
+    "gender": "Male",
+    "location":"hyderabad"
+}
+
+
+###
+
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+    "username":"rahul123",
+    "password": "rahul@456"
+}
